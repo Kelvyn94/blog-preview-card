@@ -15,7 +15,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+<img width="1358" height="573" alt="image" src="https://github.com/user-attachments/assets/db3066d1-40fc-4b6d-b413-065837eabf50" />
+
 
 _Add a screenshot of your finished solution here_
 
