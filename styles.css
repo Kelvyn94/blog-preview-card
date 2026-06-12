@@ -1,0 +1,165 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;800&display=swap");
+
+/* CSS Variables for consistent theming */
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+  --shadow-offset: 8px;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Figtree", sans-serif;
+  background-color: var(--yellow);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+/* Container for centering */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* Blog Card Styles */
+.blog-card {
+  max-width: 384px;
+  background-color: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 1.5rem;
+  border: 1px solid var(--gray-950);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--gray-950);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.blog-card:hover {
+  box-shadow: 12px 12px 0 var(--gray-950);
+}
+
+/* Blog Image */
+.blog-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* Category Badge */
+.category {
+  background-color: var(--yellow);
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.875rem;
+  color: var(--gray-950);
+  margin-bottom: 1rem;
+}
+
+/* Publish Date */
+.publish-date {
+  font-size: 0.875rem;
+  color: var(--gray-950);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Title */
+.blog-card h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gray-950);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.blog-card h1:hover {
+  color: var(--yellow);
+}
+
+/* Description */
+.description {
+  color: var(--gray-500);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Author Section */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.author-name {
+  font-weight: 800;
+  font-size: 0.875rem;
+  color: var(--gray-950);
+}
+
+/* Attribution Footer */
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--gray-950);
+}
+
+.attribution a {
+  color: var(--gray-950);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 375px) {
+  .blog-card {
+    max-width: 327px;
+    padding: 1rem;
+  }
+
+  .blog-card h1 {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+
+  .category,
+  .publish-date,
+  .author-name {
+    font-size: 0.75rem;
+  }
+}
