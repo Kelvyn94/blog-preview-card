@@ -22,7 +22,7 @@ _Add a screenshot of your finished solution here_
 
 ### Links
 
-- Solution URL: [https://github.com/yourusername/blog-preview-card](https://github.com/yourusername/blog-preview-card)
+- Solution URL: https://github.com/Kelvyn94/blog-preview-card
 - Live Site URL: https://kelvyn94.github.io/blog-preview-card/ 
 
 ## My process
