@@ -51,11 +51,12 @@ body {
   padding: var(--spacing-lg);
   border: 1px solid var(--gray-950);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--gray-950);
+  transition: box-shadow 0.3s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .blog-card {
-    transition: box-shadow 0.3s ease;
+    transition: none;
   }
 }
 
