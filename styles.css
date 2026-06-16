@@ -7,8 +7,8 @@
   --white: hsl(0, 0%, 100%);
   --gray-500: hsl(0, 0%, 42%);
   --gray-950: hsl(0, 0%, 7%);
-  --shadow-offset: 0.5rem; /* Using rem instead of px */
-  --card-max-width: 24rem; /* 384px converted to rem (384/16 = 24) */
+  --shadow-offset: 0.5rem;
+  --card-max-width: 24rem; /* 384px → 24rem */
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
@@ -25,7 +25,7 @@
 body {
   font-family: "Figtree", sans-serif;
   background-color: var(--yellow);
-  min-block-size: 100vh; /* logical property instead of min-height */
+  min-block-size: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,15 +46,14 @@ body {
 .blog-card {
   max-width: var(--card-max-width);
   background-color: var(--white);
-  border-radius: 1.25rem; /* 20px to rem */
+  border-radius: 1.25rem;
   overflow: hidden;
   padding: var(--spacing-lg);
   border: 1px solid var(--gray-950);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--gray-950);
-  /* Reduced motion preference - no transition by default */
 }
 
-/* Only apply hover effects if user doesn't prefer reduced motion */
+/* ✅ FIX 1: Reduced motion preference - no transition by default */
 @media (prefers-reduced-motion: no-preference) {
   .blog-card {
     transition: box-shadow 0.3s ease;
@@ -69,16 +68,16 @@ body {
   }
 }
 
-/* Fallback for users who prefer reduced motion - instant change without animation */
+/* ✅ FIX 2: Fallback for users who prefer reduced motion - instant change */
 .blog-card:hover {
   box-shadow: 0.75rem 0.75rem 0 var(--gray-950);
 }
 
 .blog-card h1 {
-  font-size: clamp(1.25rem, 5vw, 1.5rem); /* responsive with clamp() */
+  font-size: clamp(1.25rem, 5vw, 1.5rem);
   font-weight: 800;
   color: var(--gray-950);
-  margin-block-end: var(--spacing-md); /* logical property */
+  margin-block-end: var(--spacing-md);
   cursor: pointer;
 }
 
@@ -88,9 +87,9 @@ body {
 
 /* Blog Image */
 .blog-image {
-  inline-size: 100%; /* logical property instead of width */
-  border-radius: 0.625rem; /* 10px to rem */
-  margin-block-end: var(--spacing-lg); /* logical property */
+  inline-size: 100%;
+  border-radius: 0.625rem;
+  margin-block-end: var(--spacing-lg);
   display: block;
 }
 
@@ -98,7 +97,7 @@ body {
 .category {
   background-color: var(--yellow);
   display: inline-block;
-  padding-block: 0.25rem; /* logical properties */
+  padding-block: 0.25rem;
   padding-inline: 0.75rem;
   border-radius: 0.25rem;
   font-weight: 800;
@@ -132,8 +131,8 @@ body {
 }
 
 .author-avatar {
-  inline-size: 2rem; /* logical property, 32px to rem */
-  block-size: 2rem; /* logical property */
+  inline-size: 2rem;
+  block-size: 2rem;
   border-radius: 50%;
 }
 
@@ -161,12 +160,11 @@ body {
   text-decoration: underline;
 }
 
-/* Mobile-First Breakpoint - using min-width instead of max-width */
+/* ✅ FIX 3: Mobile-First Breakpoint using min-width with rem units */
+/* Small screens (mobile) - default styles already work */
 /* Tablet and up */
-@media (min-width: 23.4375rem) {
-  /* 375px to rem (375/16 = 23.4375) */
+@media (min-width: 23.4375rem) { /* 375px → 23.4375rem */
   .blog-card {
-    /* Base styles already work on larger screens */
     padding: var(--spacing-lg);
   }
 
@@ -176,5 +174,12 @@ body {
 
   .description {
     font-size: 1rem;
+  }
+}
+
+/* ✅ FIX 4: Larger screens */
+@media (min-width: 48rem) { /* 768px → 48rem */
+  .blog-card {
+    padding: var(--spacing-xl);
   }
 }
