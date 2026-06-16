@@ -53,7 +53,6 @@ body {
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--gray-950);
 }
 
-/* ✅ FIX 1: Reduced motion preference - no transition by default */
 @media (prefers-reduced-motion: no-preference) {
   .blog-card {
     transition: box-shadow 0.3s ease;
@@ -68,7 +67,6 @@ body {
   }
 }
 
-/* ✅ FIX 2: Fallback for users who prefer reduced motion - instant change */
 .blog-card:hover {
   box-shadow: 0.75rem 0.75rem 0 var(--gray-950);
 }
@@ -160,7 +158,6 @@ body {
   text-decoration: underline;
 }
 
-/* ✅ FIX 3: Mobile-First Breakpoint using min-width with rem units */
 /* Small screens (mobile) - default styles already work */
 /* Tablet and up */
 @media (min-width: 23.4375rem) { /* 375px → 23.4375rem */
@@ -177,7 +174,6 @@ body {
   }
 }
 
-/* ✅ FIX 4: Larger screens */
 @media (min-width: 48rem) { /* 768px → 48rem */
   .blog-card {
     padding: var(--spacing-xl);
